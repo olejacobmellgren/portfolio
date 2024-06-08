@@ -1,15 +1,25 @@
 "use client";
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaBars, FaTimes } from 'react-icons/fa'
-import Logo from '../assets/oj.png'
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
+import Logo from '../assets/oj.png';
 
 function Navbar() {
   const [nav, setNav] = useState(false)
-  const handleHamburgerClick = () => setNav(!nav)
+  const [menuPos, setMenuPos] = useState("right-[-300px]")
+  const handleHamburgerClick = () => {
+    setNav(!nav)
+    if (nav) {
+      setMenuPos("right-[-300px]")
+    } else {
+      setMenuPos("right-0")
+  }
+}
 
   return (
-    <div className="fixed w-full h-[80px] flex  justify-between items-center px-4 bg-[#0a192f] text-gray-300">
+    <div className="fixed w-full h-[80px] flex  justify-between items-center px-4 bg-[#0A192F] text-gray-300">
       <div>
         <Image src={Logo} alt="logo" className="w-32" />
       </div>
@@ -24,21 +34,44 @@ function Navbar() {
       </ul>
 
       {/* Hamburger */}
-      <div onClick={handleHamburgerClick} className="md:hidden z-10">
-        {!nav ? <FaBars /> : <FaTimes />}
+      <div onClick={handleHamburgerClick} className="md:hidden z-20">
+        {!nav ? <FaBars color="white" size={30} /> : <FaTimes color="white" size={30} />}
       </div>
 
       {/* Mobile Menu */}
-      <ul className={!nav ? "hidden" : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"}>
-        <li className="py-6 text-4xl">Home</li>
-        <li className="py-6 text-4xl">About</li>
-        <li className="py-6 text-4xl">Technologies</li>
-        <li className="py-6 text-4xl">Work</li>
-        <li className="py-6 text-4xl">Contact</li>
+      <ul className={`absolute top-0 w-fit h-80 ${menuPos} bg-[#0A192F] flex flex-col justify-center items-center duration-300`}>
+        <li className="py-1 text-l">Home</li>
+        <li className="py-1 text-l">About</li>
+        <li className="py-1 text-l">Technologies</li>
+        <li className="py-1 text-l">Work</li>
+        <li className="py-1 text-l">Contact</li>
       </ul>
 
       {/* Social icons*/}
-      <div className="hidden"></div>
+      <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+        <ul className="flex flex-col gap-1">
+          <li className="w-40 h-14 flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#0077B5] rounded-r-xl">
+            <a className="flex w-full justify-between items-center text-gray-300" href="https://www.linkedin.com/in/ole-jacob-mellgren-9b417127a/" target="_blank">
+              LinkedIn <FaLinkedin className="ml-8" size={30} />
+            </a>
+          </li>
+          <li className="w-40 h-14 flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333] rounded-r-xl">
+            <a className="flex w-full justify-between items-center text-gray-300" href="https://github.com/olejacobmellgren" target="_blank">
+              GitHub <FaGithub className="ml-8" size={30} />
+            </a>
+          </li>
+          <li className="w-40 h-14 flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#de5246] rounded-r-xl">
+            <a className="flex w-full justify-between items-center text-gray-300" href="mailto:olejacobmellgren@gmail.com">
+              Email <HiOutlineMail className="ml-8" size={30} />
+            </a>
+          </li>
+          <li className="w-40 h-14 flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69] rounded-r-xl">
+            <a className="flex w-full justify-between items-center text-gray-300" href="/">
+              Resume <BsFillPersonLinesFill className="ml-8" size={30} />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
