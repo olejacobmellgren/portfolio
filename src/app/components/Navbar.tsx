@@ -5,6 +5,7 @@ import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/f
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Logo from '../assets/oj.png';
+import { Link } from 'react-scroll';
 
 function Navbar() {
   const [nav, setNav] = useState(false)
@@ -15,22 +16,21 @@ function Navbar() {
       setMenuPos("right-[-300px]")
     } else {
       setMenuPos("right-0")
+    }
   }
-}
 
   return (
     <div className="fixed w-full h-[80px] flex  justify-between items-center px-4 bg-[#0A192F] text-gray-300">
       <div>
-        <Image src={Logo} alt="logo" className="w-32" />
+        <Link to="home" smooth={true} duration={500}> <Image src={Logo} alt="logo" className="w-32 cursor-pointer hover:scale-110 duration-300 pt-8" /> </Link>
       </div>
 
       {/* Menu */}
       <ul className="hidden md:flex">
-        <li className="">Home</li>
-        <li className="">About</li>
-        <li className="">Technologies</li>
-        <li className="">Projects</li>
-        <li className="">Contact</li>
+        <li><Link to="about" smooth={true} duration={500}> About </Link></li>
+        <li><Link to="experience" smooth={true} duration={500}> Experience </Link></li>
+        <li><Link to="projects" smooth={true} offset={-80} duration={500}> Projects </Link></li>
+        <li><Link to="contact" smooth={true} duration={500}> Contact </Link></li>
       </ul>
 
       {/* Hamburger */}
@@ -40,11 +40,10 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <ul className={`absolute top-0 w-fit h-80 ${menuPos} bg-[#0A192F] flex flex-col justify-center items-center duration-300`}>
-        <li className="py-1 text-l">Home</li>
-        <li className="py-1 text-l">About</li>
-        <li className="py-1 text-l">Technologies</li>
-        <li className="py-1 text-l">Projects</li>
-        <li className="py-1 text-l">Contact</li>
+        <li className="py-1 text-l"><Link to="about" smooth={true} duration={500} onClick={handleHamburgerClick}> About </Link></li>
+        <li className="py-1 text-l"><Link to="experience" smooth={true} duration={500} onClick={handleHamburgerClick}> Experience </Link></li>
+        <li className="py-1 text-l"><Link to="projects" smooth={true} offset={-80} duration={500} onClick={handleHamburgerClick}> Projects </Link></li>
+        <li className="py-1 text-l"><Link to="contact" smooth={true} duration={500} onClick={handleHamburgerClick}> Contact </Link></li>
       </ul>
 
       {/* Social icons*/}

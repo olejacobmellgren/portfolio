@@ -18,7 +18,7 @@ function Projects() {
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-[#E25822]">Projects</p>
-          <p className="py-6 text-gray-400">// Check out some of my recent work</p>
+          <p className="py-6 text-gray-400">// Check out some of my recent projects</p>
         </div>
         <div className="flex gap-2">
           <div className="grid md:grid-cols-2 gap-4">

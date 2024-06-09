@@ -8,7 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-
+      fontFamily: {
+        source: ["Source Code Pro", "monospace"],
+      },
     },
   },
   plugins: [],
