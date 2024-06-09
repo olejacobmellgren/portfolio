@@ -29,7 +29,7 @@ function Navbar() {
         <li className="">Home</li>
         <li className="">About</li>
         <li className="">Technologies</li>
-        <li className="">Work</li>
+        <li className="">Projects</li>
         <li className="">Contact</li>
       </ul>
 
@@ -43,7 +43,7 @@ function Navbar() {
         <li className="py-1 text-l">Home</li>
         <li className="py-1 text-l">About</li>
         <li className="py-1 text-l">Technologies</li>
-        <li className="py-1 text-l">Work</li>
+        <li className="py-1 text-l">Projects</li>
         <li className="py-1 text-l">Contact</li>
       </ul>
 
