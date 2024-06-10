@@ -10,11 +10,9 @@ import { Link } from 'react-scroll';
 function Navbar() {
   const [nav, setNav] = useState(false)
   const [menuPos, setMenuPos] = useState("right-[-300px]")
-  const [section, setSection] = useState("home")
 
-  const handleHamburgerClick = (section: string) => {
+  const handleHamburgerClick = () => {
     setNav(!nav)
-    setSection(section)
     if (nav) {
       setMenuPos("right-[-300px]")
     } else {
@@ -22,33 +20,31 @@ function Navbar() {
     }
   }
 
-  console.log(section)
-
   return (
-    <div className="fixed w-full h-[80px] flex  justify-between items-center px-4 bg-[#0A192F] text-gray-300">
+    <div className="fixed w-full h-[80px] flex  justify-between items-center px-4 bg-[#0A192F] text-gray-300 z-40">
       <div>
         <Link to="home" smooth={true} duration={500}> <Image src={Logo} alt="logo" className="w-32 cursor-pointer hover:scale-110 duration-300 pt-8" /> </Link>
       </div>
 
       {/* Menu */}
       <ul className="hidden md:flex">
-        <li><Link to="about" smooth={true} duration={500} className={section === "about" ? "border-b-2 border-[#E25828]" :""} onClick={() => setSection("about")}> About </Link></li>
-        <li><Link to="experience" smooth={true} duration={500} className={section === "experience" ? "border-b-2 border-[#E25828]" :""} onClick={() => setSection("experience")}> Experience </Link></li>
-        <li><Link to="projects" smooth={true} offset={-80} duration={500} className={section === "projects" ? "border-b-2 border-[#E25828]" :""} onClick={() => setSection("projects")}> Projects </Link></li>
-        <li><Link to="contact" smooth={true} duration={500} className={section === "contact" ? "border-b-2 border-[#E25828]" :""} onClick={() => setSection("contact")}> Contact </Link></li>
+        <li><Link to="about" smooth={true} duration={500} > About </Link></li>
+        <li><Link to="experience" smooth={true} duration={500}> Experience </Link></li>
+        <li><Link to="projects" smooth={true} offset={-80} duration={500} > Projects </Link></li>
+        <li><Link to="contact" smooth={true} duration={500} > Contact </Link></li>
       </ul>
 
       {/* Hamburger */}
-      <div onClick={() => handleHamburgerClick(section)} className="md:hidden z-20">
+      <div onClick={handleHamburgerClick} className="md:hidden z-20">
         {!nav ? <FaBars color="white" size={30} /> : <FaTimes color="white" size={30} />}
       </div>
 
       {/* Mobile Menu */}
       <ul className={`absolute z-30 top-0 w-fit h-80 ${menuPos} bg-[#0A192F] flex flex-col justify-center items-center duration-300`}>
-        <li className="py-1 text-l"><Link to="about" smooth={true} duration={500} className={section === "about" ? "border-b-2 border-[#E25828]" :""} onClick={() => handleHamburgerClick("about")}> About </Link></li>
-        <li className="py-1 text-l"><Link to="experience" smooth={true} duration={500} className={section === "experience" ? "border-b-2 border-[#E25828]" :""} onClick={() => handleHamburgerClick("experience")}> Experience </Link></li>
-        <li className="py-1 text-l"><Link to="projects" smooth={true} offset={-80} duration={500} className={section === "projects" ? "border-b-2 border-[#E25828]" :""} onClick={() => handleHamburgerClick("projects")}> Projects </Link></li>
-        <li className="py-1 text-l"><Link to="contact" smooth={true} duration={500} className={section === "contact" ? "border-b-2 border-[#E25828]" :""} onClick={() => handleHamburgerClick("contact")}> Contact </Link></li>
+        <li className="py-1 text-l"><Link to="about" smooth={true} duration={500} > About </Link></li>
+        <li className="py-1 text-l"><Link to="experience" smooth={true} duration={500} > Experience </Link></li>
+        <li className="py-1 text-l"><Link to="projects" smooth={true} offset={-80} duration={500} > Projects </Link></li>
+        <li className="py-1 text-l"><Link to="contact" smooth={true} duration={500} > Contact </Link></li>
       </ul>
 
       {/* Social icons*/}
