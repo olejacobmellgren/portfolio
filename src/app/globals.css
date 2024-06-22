@@ -5,9 +5,21 @@
 
 
 @layer base {
+  body {
+    @apply bg-[#0A192F]
+  }
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#E25822];
+    @apply rounded-full;
+  }
+  
   li {
     @apply px-4;
     @apply cursor-pointer;
   }
 }
+
 

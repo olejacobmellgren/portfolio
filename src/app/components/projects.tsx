@@ -1,5 +1,5 @@
+"use client";
 import React from 'react';
-import Image from 'next/image';
 import ProjectCard from './projectCard';
 import Horserace from '../assets/horserace.png';
 import Ibdb from '../assets/ibdb.png';
@@ -9,10 +9,23 @@ import Vektor from '../assets/vektor.png';
 import Workout from '../assets/workout.png';
 import SolarML from '../assets/solar_ml.png';
 import OldPortfolio from '../assets/old_portfolio.png';
+import { useInView } from "react-intersection-observer";
 
-function Projects() {
+interface ProjectsProps {
+  id: string;
+  onChange: (inView: boolean, id: string) => void;
+}
+
+function Projects({ id, onChange }: ProjectsProps) {
+
+  const { ref, inView } = useInView( {
+      threshold: 0.08,
+      onChange: (inView) => onChange(inView, id),
+    }
+  );
+
   return (
-    <div id="projects" className="w-full h-full text-gray-300 bg-[#0A192F]">
+    <div id={id} className="w-full h-full text-gray-300">
 
       {/* Container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
@@ -21,7 +34,7 @@ function Projects() {
           <p className="py-6 text-gray-400">// Check out some of my recent projects</p>
         </div>
         <div className="flex gap-2">
-          <div className="grid md:grid-cols-2 gap-4">
+          <div ref={ref} className={`grid md:grid-cols-2 gap-4 ${inView ? "opacity-100 duration-1000" : "xl:opacity-0 blur xl:translate-x-[-100%]"}`}>
             <ProjectCard image={Ibdb} title="IBDB" demoLink="https://ibdb-743f5.web.app/" codeLink="https://github.com/olejacobmellgren/IBDb" />
             <ProjectCard image={Horserace} title="Horserace" demoLink="https://filipskaug.github.io/HorseRace/" codeLink="https://github.com/olejacobmellgren/horse-race" />
             <ProjectCard image={Jokemaster} title="Jokemaster" demoLink="https://olejacobmellgren.github.io/jokemaster/" codeLink="https://github.com/olejacobmellgren/jokemaster" />
