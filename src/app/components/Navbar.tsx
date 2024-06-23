@@ -33,7 +33,7 @@ function Navbar({ activeSection }: NavbarProps) {
       {/* Menu */}
       <ul className="hidden md:flex">
         <li><Link className={`${activeSection === "about" ? "border-b-2 border-[#E25822]" :""}`} to="about" smooth={true} duration={500} > About </Link></li>
-        <li><Link className={`${activeSection === "experience" ? "border-b-2 border-[#E25822]" :""}`} to="experience" smooth={true} duration={500}> Experience </Link></li>
+        <li><Link className={`${activeSection === "experience" ? "border-b-2 border-[#E25822]" :""}`} to="experience" smooth={true} offset={-700} duration={500}> Experience </Link></li>
         <li><Link className={`${activeSection === "projects" ? "border-b-2 border-[#E25822]" :""}`}to="projects" smooth={true} offset={-80} duration={500} > Projects </Link></li>
         <li><Link className={`${activeSection === "contact" ? "border-b-2 border-[#E25822]" :""}`}to="contact" smooth={true} duration={500} > Contact </Link></li>
       </ul>
