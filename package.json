@@ -1,10 +1,12 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://olejacobmellgren.github.io/",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "gh-pages -d build",
     "start": "next start",
     "lint": "next lint"
   },
