@@ -1,4 +1,5 @@
 "use client";
+import { data } from '@/data/contact';
 import React from 'react';
 import { useInView } from "react-intersection-observer";
 
@@ -19,8 +20,7 @@ function Contact({ id, onChange }: ContactProps) {
       <form method="POST" action="https://getform.io/f/lbkmqjnb" className="flex flex-col items-center max-w-[600px] w-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-[#E25822] text-gray-300">Contact</p>
-          <p className="text-gray-400 p-4">// Get in touch by submitting the form below or
-            send me an Email - olejacobmellgren@gmail.com</p>
+          <p className="text-gray-400 p-4">{data.comment}</p>
         </div>
         <div ref={ref} className={`${inView ? "opacity-100 duration-1000" : "xl:opacity-0 blur xl:translate-x-[-100%]"}`}>
           <input className="p-2 bg-[#CCD6F6] rounded-lg w-full" type="text" placeholder="Name" name="name" />

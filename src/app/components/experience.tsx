@@ -36,10 +36,10 @@ function Experience({ id, onChange }: ExperienceProps) {
         <div>
           <p className="text-4xl font-bold inline border-b-4 border-[#E25822]">Experience</p>
         </div>
-        <p className="py-6 text-gray-400">// Education and work</p>
+        <p className="py-6 text-gray-400">{data.comment}</p>
         <div ref={timelineRef} className={`mb-24 ${timelineInView ? "opacity-100 duration-1000" : "xl:opacity-0 blur xl:translate-x-[-100%]"}`}>
           <VerticalTimeline lineColor="#E25822">
-            {data.map((item, index) => (
+            {data.experience.map((item, index) => (
               <React.Fragment key={index}>
                 <VerticalTimelineElement
                   icon={item.icon}
@@ -60,7 +60,7 @@ function Experience({ id, onChange }: ExperienceProps) {
           </VerticalTimeline>
         </div>
 
-        <p className="py-6 text-gray-400">// These are some of the technologies I've worked with</p>
+        <p className="py-6 text-gray-400">{data.secondComment}</p>
         <div ref={techsRef} className={`w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 ${techsInView ? "opacity-100 duration-1000" : "xl:opacity-0 blur xl:translate-x-[-100%]"}`}>
           <div>
             <Image className="w-20 mx-auto hover:scale-110 duration-500" src={Python} alt="python icon" />

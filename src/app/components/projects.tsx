@@ -10,6 +10,7 @@ import Workout from '../assets/workout.png';
 import SolarML from '../assets/solar_ml.png';
 import OldPortfolio from '../assets/old_portfolio.png';
 import { useInView } from "react-intersection-observer";
+import { data } from '@/data/projects';
 
 interface ProjectsProps {
   id: string;
@@ -31,7 +32,7 @@ function Projects({ id, onChange }: ProjectsProps) {
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-[#E25822]">Projects</p>
-          <p className="py-6 text-gray-400">// Check out some of my recent projects</p>
+          <p className="py-6 text-gray-400">{data.comment}</p>
         </div>
         <div className="flex gap-2">
           <div ref={ref} className={`grid md:grid-cols-2 gap-4 ${inView ? "opacity-100 duration-1000" : "xl:opacity-0 blur xl:translate-x-[-100%]"}`}>

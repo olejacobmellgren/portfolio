@@ -4,7 +4,10 @@ const vektor = '/vektor.svg';
 const genus = '/genus.webp';
 const berkeley = '/berkeley.png';
 
-export const data = [
+export const data = {
+  comment: "// Education and work",
+  secondComment: "// These are some of the technologies I've worked with",
+  experience: [
   {
     title: "Master's in Computer Science",
     location: "Trondheim, Norway",
@@ -33,4 +36,4 @@ export const data = [
     description: "I am currently on an exchange semester at UC Berkeley, taking courses in Computer Science with a focus on computer vision and deep learning. During my time at Berkeley, I have gained significant insights, particularly in the field of deep learning.",
     icon: React.createElement("img", { src: berkeley })
   }
-];
+]};
