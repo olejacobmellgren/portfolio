@@ -6,7 +6,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Logo from '../assets/oj.png';
 import { Link } from 'react-scroll';
-const CV = '/CV_OleJacobMellgren.pdf'
+// const CV = '/CV_xOleJacobMellgren.pdf'
 
 interface NavbarProps {
   activeSection: string;
@@ -70,9 +70,9 @@ function Navbar({ activeSection }: NavbarProps) {
             </a>
           </li>
           <li className="w-40 h-14 flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69] rounded-r-xl">
-            <a className="flex w-full justify-between items-center text-gray-300" href={CV} target="_blank">
+            {/* <a className="flex w-full justify-between items-center text-gray-300" href={CV} target="_blank">
               Resume <BsFillPersonLinesFill className="ml-8" size={30} />
-            </a>
+            </a> */}
           </li>
         </ul>
       </div>
