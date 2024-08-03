@@ -1,11 +1,11 @@
 'use client';
-import Navbar from "./components/navbar";
-import Home from "./components/home";
+import React, { useState } from "react";
 import About from "./components/about";
-import Experience from "./components/experience";
-import Projects from "./components/projects";
 import Contact from "./components/contact";
-import { useState } from "react";
+import Experience from "./components/experience";
+import Home from "./components/home";
+import Navbar from "./components/navbar";
+import Projects from "./components/projects";
 
 export default function App() {
 
