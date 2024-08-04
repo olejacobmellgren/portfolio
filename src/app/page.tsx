@@ -5,7 +5,8 @@ import Contact from "./components/contact";
 import Experience from "./components/experience";
 import Home from "./components/home";
 import Projects from "./components/projects";
-import Navbar from "./components/navbar";
+import Header from "./components/header";
+// import Navbar from "./components/navbar";
 
 export default function App() {
 
@@ -19,7 +20,8 @@ export default function App() {
 
   return (
     <main className="font-source">
-      <Navbar activeSection={activeSection}/>
+      {/* <Navbar activeSection={activeSection}/> */}
+      <Header />
       <Home id="home" onChange={handleSectionChange}/>
       <About id="about" onChange={handleSectionChange}/>
       <Experience id="experience" onChange={handleSectionChange}/>
