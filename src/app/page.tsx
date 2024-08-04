@@ -21,7 +21,7 @@ export default function App() {
   return (
     <main className="font-source">
       {/* <Navbar activeSection={activeSection}/> */}
-      <Header />
+      <Header activeSection={activeSection}/>
       <Home id="home" onChange={handleSectionChange}/>
       <About id="about" onChange={handleSectionChange}/>
       <Experience id="experience" onChange={handleSectionChange}/>
