@@ -12,7 +12,7 @@ interface headerProps {
   activeSection: string;
 }
 
-function header({ activeSection }: headerProps) {
+function Header({ activeSection }: headerProps) {
   const [nav, setNav] = useState(false)
   const [menuPos, setMenuPos] = useState("right-[-300px]")
 
@@ -81,4 +81,4 @@ function header({ activeSection }: headerProps) {
   )
 }
 
-export default header
+export default Header
